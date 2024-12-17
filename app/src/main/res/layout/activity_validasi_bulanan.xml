@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:sweet="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:focusable="true">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/AppToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#ffffff"
+        sweet:subtitleTextColor="#0f4c81">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="Validasi Bulanan"
+                android:layout_width="wrap_content"
+                android:textSize="20sp"
+                android:layout_centerVertical="true"
+                android:textColor="#0F4C81"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"/>
+
+            <ImageButton
+                android:id="@+id/filter"
+                android:scaleType="fitCenter"
+                android:layout_centerVertical="true"
+                android:layout_width="30dp"
+                android:layout_marginRight="16dp"
+                android:layout_alignParentRight="true"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:src="@drawable/more_vert"/>
+        </RelativeLayout>
+
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <LinearLayout
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/AppToolBar"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toLeftOf="@+id/refresh"
+            android:text="*Silahkan Input Minimal 3 Karakter"
+            android:textColor="#FB4141"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textinput_pilih_search"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/refresh_layout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="16dp"
+        sweet:boxCornerRadiusBottomEnd="4dp"
+        sweet:boxCornerRadiusBottomStart="4dp"
+        sweet:boxCornerRadiusTopEnd="4dp"
+        sweet:boxCornerRadiusTopStart="4dp"
+        sweet:boxStrokeColor="#0f4c81"
+        sweet:endIconMode="clear_text"
+        sweet:startIconDrawable="@drawable/ic_search">
+
+        <EditText
+            android:id="@+id/searchview"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_gravity="center_horizontal"
+            android:hint="Cari Nama SparePart"
+            android:longClickable="false"
+            android:paddingLeft="5dp"
+            android:singleLine="true"
+            android:textSize="16dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tablayout"
+        style="@style/AppTheme"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textinput_pilih_search"
+        android:background="#ffffff">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OutStanding" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stok Fisik" />
+    </com.google.android.material.tabs.TabLayout>
+
+
+    <LinearLayout
+        android:id="@+id/keterangan"
+        android:layout_below="@+id/tablayout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        >
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/refresh"
+            android:visibility="gone"
+            sweet:strokeWidth="1dp"
+            sweet:strokeColor="#AFC3D5"
+            android:backgroundTint="#EDF7FF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_margin="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/replay"/>
+                <TextView
+                    android:layout_toLeftOf="@+id/refresh"
+                    android:textColor="#0F4C81"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Swipe ke bawah untuk mengupdate pergerakan stok akhir."/>
+            </LinearLayout>
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/warning"
+            android:visibility="gone"
+            sweet:strokeWidth="1dp"
+            sweet:strokeColor="#FEC0C0"
+            android:backgroundTint="#FFF1F1"
+            android:layout_below="@+id/textinput_pilih_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_margin="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/info"/>
+                <TextView
+                    android:layout_toLeftOf="@+id/red"
+                    android:textColor="#FB4141"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Batas waktu update stok sparepart telah berakhir, silahkan hubungi PIC terkait jika terjadi ketidak sesuaian pengisian."/>
+            </LinearLayout>
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+
+
+    <TextView
+        android:id="@+id/tanggal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/keterangan"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Update"
+        android:textColor="#0a0a0a"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+
+    <com.omadahealth.github.swipyrefreshlayout.library.SwipyRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_above="@+id/linear_layout_simpan"
+        android:layout_below="@+id/tanggal"
+        app:srl_direction="both"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ListView
+            android:id="@+id/list_stock_bulanan"
+            android:focusableInTouchMode="false"
+            android:isScrollContainer="false"
+            android:transcriptMode="normal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/linear_layout_simpan"
+            android:layout_below="@+id/tanggal"
+            android:divider="@null"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp" />
+    </com.omadahealth.github.swipyrefreshlayout.library.SwipyRefreshLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/load_more"
+        android:visibility="gone"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:padding="5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="15dp"
+        android:textColor="#ffffff"
+        android:backgroundTint="#0F4C81"
+        android:layout_marginTop="-50dp"
+        android:layout_below="@+id/swipeRefreshLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Load More" />
+
+
+    <RelativeLayout
+        android:id="@+id/linear_layout_simpan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Update Stock"
+                android:textSize="12sp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="0 / 0 Item"
+                android:textSize="12sp"
+                sweet:chipCornerRadius="5sp"
+                sweet:chipStrokeWidth="1dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/simpan"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:padding="5dp"
+                android:textColor="#ffffff"
+                android:backgroundTint="#0F4C81"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Selesai" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

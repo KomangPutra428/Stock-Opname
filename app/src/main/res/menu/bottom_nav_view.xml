@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:sweet="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/bottom_nav_home"
+        android:enabled="true"
+        android:icon="@drawable/ic_tabler_icon_home"
+        android:title="Home" />
+    <item
+        android:id="@+id/bottom_nav_profil"
+        android:enabled="true"
+        android:icon="@drawable/user_circle"
+        android:title="Profile" />
+</menu>

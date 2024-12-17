@@ -1,0 +1,5 @@
+<resources>
+    <item name="tag_position" type="id"/>
+    <item name="tag_text_watcher" type="id"/>
+
+</resources>
